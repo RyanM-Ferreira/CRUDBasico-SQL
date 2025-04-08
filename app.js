@@ -36,4 +36,13 @@ app.use("/group", groupRouter);
     });
 });*/
 
+// Iniciar o servidor e sincronizar com o banco de dados (eu vou ficar malucokkkkkkk)
+db.sequelize.sync()
+    .then(() => {
+        console.log("Banco de dados sincronizado");
+    })
+    .catch(err => {
+        console.error("Erro ao sincronizar o banco de dados:", err);
+    });
+
 module.exports = app;
