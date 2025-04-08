@@ -34,9 +34,9 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 // Iniciar o servidor e sincronizar com o banco de dados
 db.sequelize.sync().then(() => {
     console.log("Banco de dados conectado com sucesso!");
-    app.listen(PORT, () => {
-        console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
-    });
+    /*    app.listen(PORT, () => {
+            console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
+        });*/
 });
 
 module.exports = app;
