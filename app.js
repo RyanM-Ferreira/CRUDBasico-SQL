@@ -1,4 +1,4 @@
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const express = require("express");
 const path = require("path");
@@ -23,7 +23,6 @@ const alunoRouter = require("./routes/alunos");
 const professorRouter = require("./routes/professores");
 const groupRouter = require("./routes/group");
 
-//const produtoRouter = require("./routes/produtos");
 app.use("/categorias", categoriaRouter);
 app.use("/alunos", alunoRouter);
 app.use("/professores", professorRouter);
@@ -31,16 +30,14 @@ app.use("/group", groupRouter);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
-// Iniciar o servidor e sincronizar com o banco de dados (eu vou ficar malucokkkkkkk)
+// Iniciar o servidor e sincronizar com o banco de dados
 db.sequelize.sync().then(() => {
     console.log("Banco de dados sincronizado");
 
-    // Só inicia o servidor se rodar com: node app.js --local
-    if (process.argv.includes("--local")) {
-        app.listen(PORT, () => {
-            console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
-        });
-    }
+    // Inicia o servidor automaticamente
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
+    });
 }).catch(err => {
     console.error("Erro ao sincronizar o banco de dados:", err);
 });

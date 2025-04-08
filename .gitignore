@@ -1,4 +1,4 @@
-# Ignorar
+# Ignorar arquivos e diretórios desnecessários
 node_modules/
 .vercel/
 .vscode/
