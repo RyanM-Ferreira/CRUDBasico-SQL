@@ -1,3 +1,5 @@
+const PORT = 3000;
+
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -30,26 +32,11 @@ app.use("/group", groupRouter);
 //app.use("/produtos", produtoRouter);
 
 // Iniciar o servidor e sincronizar com o banco de dados
-/*db.sequelize.sync().then(() => {
-    app.listen(3000, () => {
-        console.log("Servidor em execução na porta 3000");
+db.sequelize.sync().then(() => {
+    console.log("Banco de dados conectado com sucesso!");
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
     });
-});*/
-
-// Iniciar o servidor e sincronizar com o banco de dados (eu vou ficar malucokkkkkkk)
-db.sequelize.sync()
-    .then(() => {
-        console.log("Banco de dados sincronizado");
-
-        // Só inicia o servidor se rodar com: node app.js --local
-        if (process.argv.includes("--local")) {
-            app.listen(3000, () => {
-                console.log("Servidor rodando em http://localhost:3000 🚀");
-            });
-        }
-    })
-    .catch(err => {
-        console.error("Erro ao sincronizar o banco de dados:", err);
-    });
+});
 
 module.exports = app;
