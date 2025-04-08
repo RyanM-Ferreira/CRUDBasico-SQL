@@ -29,7 +29,7 @@ app.use("/alunos", alunoRouter);
 app.use("/professores", professorRouter);
 app.use("/group", groupRouter);
 
-//app.use("/produtos", produtoRouter);
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 // Iniciar o servidor e sincronizar com o banco de dados
 db.sequelize.sync().then(() => {
