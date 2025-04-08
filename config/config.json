@@ -1,9 +1,10 @@
 {
     "development": {
         "username": "root",
-        "password": "",
-        "database": "3dsams",
-        "host": "localhost",
+        "password": "XdDyLmWKAtfalLDXzxxvZTFifPiuXdxD",
+        "database": "railway",
+        "host": "shinkansen.proxy.rlwy.net",
+        "port": 16156,
         "dialect": "mysql"
     }
 }
