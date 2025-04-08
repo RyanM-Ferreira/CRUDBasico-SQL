@@ -1,9 +1,31 @@
 {
     "version": 2,
-    "rewrites": [
+    "builds": [
         {
-            "source": "/(.*)",
-            "destination": "app.js"
+            "src": "routes/*.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/categorias",
+            "dest": "/routes/categorias.js"
+        },
+        {
+            "src": "/alunos",
+            "dest": "/routes/alunos.js"
+        },
+        {
+            "src": "/professores",
+            "dest": "/routes/professores.js"
+        },
+        {
+            "src": "/group",
+            "dest": "/routes/group.js"
+        },
+        {
+            "src": "/",
+            "dest": "/routes/index.js"
         }
     ]
 }

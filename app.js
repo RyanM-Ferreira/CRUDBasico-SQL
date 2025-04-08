@@ -29,14 +29,13 @@ app.use("/alunos", alunoRouter);
 app.use("/professores", professorRouter);
 app.use("/group", groupRouter);
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+// Conectar ao banco (idealmente usar uma conexão que evite abrir múltiplas sessões)
+db.sequelize.sync();
 
-// Iniciar o servidor e sincronizar com o banco de dados
-db.sequelize.sync().then(() => {
-    console.log("Banco de dados conectado com sucesso!");
-    app.listen(PORT, () => {
-        console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
-    });
+// Middleware de exemplo
+app.get("/", (req, res) => {
+  res.render("index", { mensagem: "Express rodando no Vercel!" });
 });
 
+// Exporta como função para o Vercel
 module.exports = app;
