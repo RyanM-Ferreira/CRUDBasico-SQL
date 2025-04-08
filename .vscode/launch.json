@@ -5,6 +5,9 @@
             "request": "launch",
             "name": "Iniciar Node App (local)",
             "program": "${workspaceFolder}/app.js",
+            "args": [
+                "--local"
+            ]
         }
     ]
 }

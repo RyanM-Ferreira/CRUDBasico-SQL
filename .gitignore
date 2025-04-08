@@ -1,3 +1,4 @@
-# Modulos
+# Ignorar
 node_modules/
-.vercel
+.vercel/
+.vscode/

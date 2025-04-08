@@ -31,9 +31,18 @@ app.use("/group", groupRouter);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
-// Iniciar o servidor e sincronizar com o banco de dados
+// Iniciar o servidor e sincronizar com o banco de dados (eu vou ficar malucokkkkkkk)
 db.sequelize.sync().then(() => {
-    console.log("Banco de dados conectado com sucesso!");
+    console.log("Banco de dados sincronizado");
+
+    // Só inicia o servidor se rodar com: node app.js --local
+    if (process.argv.includes("--local")) {
+        app.listen(PORT, () => {
+            console.log(`Servidor rodando na porta: http://localhost:${PORT}`);
+        });
+    }
+}).catch(err => {
+    console.error("Erro ao sincronizar o banco de dados:", err);
 });
 
 module.exports = app;
