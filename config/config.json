@@ -1,0 +1,9 @@
+{
+    "development": {
+        "username": "root",
+        "password": "",
+        "database": "3dsams",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}
