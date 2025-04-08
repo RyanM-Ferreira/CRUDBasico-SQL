@@ -32,6 +32,12 @@ app.use("/group", groupRouter);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
+db.sequelize.authenticate().then(() => {
+    console.log("Conexão com o banco de dados bem-sucedida.");
+}).catch((err) => {
+    console.error("Erro ao conectar ao banco de dados:", err);
+});
+
 // Iniciar o servidor e sincronizar com o banco de dados
 db.sequelize.sync().then(() => {
     console.log("Banco de dados sincronizado");
@@ -45,3 +51,4 @@ db.sequelize.sync().then(() => {
 });
 
 module.exports = app;
+
