@@ -30,7 +30,7 @@ app.use("/group", groupRouter);
 //app.use("/produtos", produtoRouter);
 
 // Iniciar o servidor e sincronizar com o banco de dados
-db.sequelize.sync()/*.then(() => {
+/*db.sequelize.sync().then(() => {
     app.listen(3000, () => {
         console.log("Servidor em execução na porta 3000");
     });
