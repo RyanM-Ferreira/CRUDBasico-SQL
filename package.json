@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RyanM-Ferreira/CRUDBasico-SQL#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "ejs-layouts": "^0.0.1",
     "express": "^5.1.0",

@@ -1,3 +1,5 @@
+const config = require("./config/config"); // Atualizado para usar config.js
+
 const PORT = process.env.PORT || 3000;
 
 const express = require("express");
