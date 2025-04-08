@@ -4,8 +4,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Iniciar Node App",
-            "program": "${workspaceFolder}/app.js"
+            "name": "Iniciar Node App (local)",
+            "program": "${workspaceFolder}/app.js",
+            "args": [
+                "--local"
+            ]
         }
     ]
 }
